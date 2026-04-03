@@ -1,5 +1,5 @@
 
-FROM debian:10-slim
+FROM debian:11-slim
 
 ARG VERSION
 
@@ -29,7 +29,7 @@ RUN ./build.sh
 RUN cp /opt/godot/bin/godot* /opt/godot/bin/godot
 
 
-FROM debian:10-slim
+FROM debian:11-slim
 
 RUN apt-get update -y && apt-get install -y libatomic1
 COPY --from=0 /opt/godot/bin/godot /usr/local/bin/godot
