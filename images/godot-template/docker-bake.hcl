@@ -9,11 +9,11 @@ group "default" {
 target "godot" {
   dockerfile = "Dockerfile"
   context = "."
-  platforms = ["linux/amd64", "linux/arm/v7"]
+  platforms = ["linux/amd64", "linux/arm64"]
   args = {
     SOURCE_REPOSITORY = REPOSITORY
     VERSION = VERSION
   }
   tags = ["${REPOSITORY}:${VERSION}-template"]
-  output = ["type=registry"]
+  output = ["type=image,push=false"]
 }

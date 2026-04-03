@@ -9,10 +9,10 @@ group "default" {
 target "godot" {
   dockerfile = "Dockerfile"
   context = "."
-  platforms = ["linux/amd64", "linux/arm/v7"]
+  platforms = ["linux/amd64", "linux/arm64"]
   args = {
     VERSION = VERSION
   }
   tags = ["${REPOSITORY}:${VERSION}"]
-  output = ["type=registry"]
+  output = ["type=image,push=false"]
 }
