@@ -2,12 +2,12 @@
 ARG VERSION
 ARG SOURCE_REPOSITORY
 
-FROM debian:10-slim
+FROM debian:11-slim
 
 ARG VERSION
 
 RUN apt-get update -y && apt-get install -y wget unzip
-RUN wget https://downloads.tuxfamily.org/godotengine/${VERSION}/Godot_v${VERSION}-stable_export_templates.tpz
+RUN wget https://github.com/godotengine/godot/releases/download/${VERSION}-stable/Godot_v${VERSION}-stable_export_templates.tpz
 RUN mkdir export-template
 RUN unzip Godot_v${VERSION}-stable_export_templates.tpz
 
